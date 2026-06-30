@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font Family Overrides */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Custom Apple/Nike Minimalist Color Tokens */
+  --color-zinc-50: #f9f9fb;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-150: #e4e4e7;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-450: #71717a;
+  --color-zinc-500: #71717a;
+  --color-zinc-550: #52525b;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-850: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+
+  /* Map existing Tailwind dark classes to clean light values */
+  --color-slate-955: #f4f4f5; /* Light gray background */
+  --color-slate-950: #ffffff; /* Pure white background */
+  --color-slate-905: #e4e4e7; /* Light border */
+  --color-slate-900: #f4f4f5; /* Light gray */
+  --color-slate-855: #d4d4d8; 
+  --color-slate-850: #e4e4e7; 
+  --color-slate-800: #d4d4d8; 
+  --color-slate-700: #a1a1aa; 
+  --color-slate-600: #71717a; 
+  --color-slate-500: #52525b;
+  --color-slate-455: #52525b;
+  --color-slate-450: #3f3f46;
+  --color-slate-400: #18181b; /* Charcoal body text */
+  --color-slate-355: #27272a;
+  --color-slate-300: #18181b;
+  --color-slate-200: #09090b; /* Bold heading text */
+  --color-slate-100: #09090b;
+
+  /* Elevate category badge text colors to high-contrast dark values in light theme */
+  --color-rose-400: #b91c1c;
+  --color-amber-400: #b45309;
+  --color-blue-400: #1d4ed8;
+  --color-slate-400: #27272a;
+  --color-red-400: #b91c1c;
+  --color-yellow-400: #a16207;
+  --color-indigo-400: #4338ca;
+  --color-cyan-400: #0e7490;
+  --color-emerald-400: #047857;
+  --color-green-400: #15803d;
+  --color-purple-400: #6d28d9;
+  --color-sky-400: #0369a1;
+  --color-zinc-400: #3f3f46;
+  --color-indigo-650: #18181b; /* Map CTA indigo-650 to solid black/dark zinc */ 
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* Base Body Styles */
+body {
+  background-color: #ffffff;
+  color: #09090b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout and Grid background rules */
+.apple-grid-overlay {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+}

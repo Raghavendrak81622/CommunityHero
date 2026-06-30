@@ -1,0 +1,21 @@
+# Node.js dependencies
+node_modules/
+
+# Env config files
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+!*.env.example
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+
+# System/IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
