@@ -135,9 +135,7 @@ export default function ReportProblem() {
     const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
     if (!cloudName || !uploadPreset) {
-      console.error("Environment variables VITE_CLOUDINARY_CLOUD_NAME or VITE_CLOUDINARY_UPLOAD_PRESET are missing. Using fallback demo image.");
-      await new Promise(resolve => setTimeout(resolve, 800));
-      return "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80";
+      throw new Error("Cloudinary credentials are not configured in environment variables.");
     }
 
     const uploadData = new FormData();
