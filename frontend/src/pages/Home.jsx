@@ -1416,10 +1416,7 @@ export default function Home() {
           {/* Radial visual glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-zinc-100 rounded-full blur-3xl pointer-events-none" />
 
-          <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold bg-zinc-200 text-zinc-800 border border-zinc-250 relative z-10 w-fit mx-auto">
-            <CheckCircle2 className="h-3.5 w-3.5 text-zinc-900" />
-            <span>Join 12,000+ local heroes</span>
-          </span>
+
 
           <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 relative z-10 max-w-xl mx-auto leading-tight font-display">
             Ready to make a difference in your neighborhood?
