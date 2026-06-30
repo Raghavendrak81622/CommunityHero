@@ -137,7 +137,7 @@ export default function ReportProblem() {
     if (!cloudName || !uploadPreset) {
       console.error("Environment variables VITE_CLOUDINARY_CLOUD_NAME or VITE_CLOUDINARY_UPLOAD_PRESET are missing. Using fallback demo image.");
       await new Promise(resolve => setTimeout(resolve, 800));
-      return "https://images.unsplash.com/photo-1599740831464-5c602052f954?auto=format&fit=crop&w=800&q=80";
+      return "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80";
     }
 
     const uploadData = new FormData();
@@ -237,7 +237,7 @@ export default function ReportProblem() {
           } catch (compressErr) {
             console.error("Local compression failed:", compressErr);
             toast.error("Could not process photo. Submitting with default image.");
-            uploadedUrl = "https://images.unsplash.com/photo-1599740831464-5c602052f954?auto=format&fit=crop&w=800&q=80";
+            uploadedUrl = "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80";
           }
         }
         setUploadingImage(false);

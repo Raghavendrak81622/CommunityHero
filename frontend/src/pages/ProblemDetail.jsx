@@ -897,7 +897,7 @@ export default function ProblemDetail() {
           
           {/* Owner Actions Panel */}
           {isOwner && (
-            <div className="bg-slate-900/25 border border-indigo-950/40 rounded-2xl p-6 space-y-5">
+            <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-5 shadow-sm">
               <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider flex items-center space-x-2 font-display">
                 <Edit3 className="h-4 w-4 text-zinc-800" />
                 <span>Manage Report</span>
@@ -905,7 +905,7 @@ export default function ProblemDetail() {
               
               {/* Change Status */}
               <div className="space-y-2">
-                <label htmlFor="status-select" className="block text-xs font-medium text-slate-400">
+                <label htmlFor="status-select" className="block text-xs font-semibold text-zinc-650">
                   Update Issue Status
                 </label>
                 <select
@@ -913,21 +913,21 @@ export default function ProblemDetail() {
                   value={problem.status}
                   onChange={handleStatusChange}
                   disabled={isUpdating}
-                  className="w-full px-3 py-2 text-xs font-semibold rounded-lg bg-slate-950 border border-slate-800 focus:border-indigo-500 text-white focus:outline-none appearance-none cursor-pointer disabled:opacity-50"
+                  className="w-full px-3 py-2 text-xs font-semibold rounded-lg bg-white border border-zinc-250 focus:border-zinc-950 text-zinc-950 focus:outline-none cursor-pointer disabled:opacity-50 shadow-sm"
                 >
-                  <option value="Reported">Reported</option>
-                  <option value="Investigating">Investigating</option>
-                  <option value="In Progress">In Progress</option>
-                  <option value="Resolved">Resolved</option>
+                  <option value="Reported" className="text-zinc-950 bg-white">Reported</option>
+                  <option value="Investigating" className="text-zinc-950 bg-white">Investigating</option>
+                  <option value="In Progress" className="text-zinc-950 bg-white">In Progress</option>
+                  <option value="Resolved" className="text-zinc-950 bg-white">Resolved</option>
                 </select>
               </div>
 
               {/* Delete Issue */}
-              <div className="pt-2 border-t border-slate-855">
+              <div className="pt-2 border-t border-zinc-200">
                 <button
                   onClick={handleDelete}
                   disabled={isDeleting}
-                  className="w-full inline-flex items-center justify-center space-x-1.5 py-2 px-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-555/20 rounded-lg text-xs font-semibold transition-colors cursor-pointer disabled:opacity-50"
+                  className="w-full inline-flex items-center justify-center space-x-1.5 py-2 px-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 border border-rose-500/20 rounded-lg text-xs font-semibold transition-colors cursor-pointer disabled:opacity-50"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                   <span>{isDeleting ? "Deleting Report..." : "Delete Report"}</span>
@@ -937,35 +937,35 @@ export default function ProblemDetail() {
           )}
 
           {/* Status Timeline Panel */}
-          <div className="bg-slate-900/20 border border-slate-900 rounded-2xl p-6 space-y-6">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center space-x-2">
-              <Clock className="h-4 w-4 text-indigo-400" />
+          <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-6 shadow-sm">
+            <h3 className="text-sm font-bold text-zinc-900 uppercase tracking-wider flex items-center space-x-2 font-display">
+              <Clock className="h-4 w-4 text-zinc-700" />
               <span>Status Activity</span>
             </h3>
 
             {/* Vertical Timeline */}
-            <div className="relative border-l border-slate-800 ml-3 pl-6 space-y-6 text-sm">
+            <div className="relative border-l border-zinc-200 ml-3 pl-6 space-y-6 text-sm">
               {timeline.map((step, idx, arr) => {
                 const isLatest = idx === arr.length - 1;
                 return (
-                  <div key={`${step.status}-${idx}`} className="relative">
+                  <div key={`${step.status}-${idx}`} className="relative text-left">
                     {/* Circle Node */}
                     <span className={`absolute -left-[31px] top-1 flex h-4 w-4 items-center justify-center rounded-full border ${
                       isLatest
-                        ? 'bg-indigo-650 border-indigo-400 shadow-md shadow-indigo-600/35 ring-4 ring-indigo-900/20'
-                        : 'bg-slate-900 border-slate-700'
+                        ? 'bg-zinc-950 border-zinc-950 shadow-md shadow-zinc-950/20 ring-4 ring-zinc-950/10'
+                        : 'bg-zinc-200 border-zinc-300'
                     }`}>
                       {isLatest && <CheckCircle2 className="h-2.5 w-2.5 text-white" />}
                     </span>
                     
                     <div className="space-y-1">
                       <div className="flex items-center justify-between gap-2 text-xs">
-                        <span className={`font-semibold ${isLatest ? 'text-indigo-400' : 'text-slate-350'}`}>
+                        <span className={`font-semibold ${isLatest ? 'text-zinc-950' : 'text-zinc-500'}`}>
                           {step.status}
                         </span>
-                        <span className="text-slate-555">{step.date}</span>
+                        <span className="text-zinc-400 font-medium">{step.date}</span>
                       </div>
-                      <p className="text-xs text-slate-450 leading-relaxed">
+                      <p className="text-xs text-zinc-500 leading-relaxed">
                         {step.note}
                       </p>
                     </div>
